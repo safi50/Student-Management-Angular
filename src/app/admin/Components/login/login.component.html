@@ -1,0 +1,25 @@
+<div class="body-bg">
+
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form [formGroup]="adminLoginData" (ngSubmit)="adminLogin()">
+        <h3 style="color: #ffffff;">Admin Login</h3>
+        <label for="email">Email*</label>
+        <input type="email" formControlName="username" id="email">
+        <div *ngIf="adminLoginData.get('username')?.invalid && ((adminLoginData.get('username')?.dirty) || (adminLoginData.get('username')?.touched))"
+            class="text-danger">*required</div>
+
+        <label for="password">Password*</label>
+        <input type="password" formControlName="password" id="password">
+        <div *ngIf="adminLoginData.get('password')?.invalid && ((adminLoginData.get('password')?.dirty) || (adminLoginData.get('password')?.touched))"
+            class="text-danger">*required</div>
+
+
+        <button type="submit" style="color: #000000;" class="submit-btn"
+            [disabled]="adminLoginData.invalid">Login</button>
+
+    </form>
+
+</div>

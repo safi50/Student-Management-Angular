@@ -1,0 +1,64 @@
+<!-- UPDATE STUDENT MODEL -->
+<div class="modal fade" id="UpdateModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Update New Student</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="studentDetailsForm">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" placeholder="Name" formControlName="u_name">
+                        <label for="floatingInput">Name</label>
+                        <div *ngIf="studentDetailsForm.get('u_name')?.invalid && ((studentDetailsForm.get('u_name')?.dirty) || (studentDetailsForm.get('u_name')?.touched))"
+                            class="text-danger">*required</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" placeholder="name@example.com"
+                            formControlName="u_email">
+                        <label for="floatingInput">Email</label>
+                        <div *ngIf="studentDetailsForm.get('u_email')?.invalid && ((studentDetailsForm.get('u_email')?.dirty) || (studentDetailsForm.get('u_email')?.touched))"
+                            class="text-danger">*required</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" placeholder="Phone" formControlName="u_phone">
+                        <label for="floatingInput">Phone</label>
+                        <div *ngIf="studentDetailsForm.get('u_phone')?.invalid && ((studentDetailsForm.get('u_phone')?.dirty) || (studentDetailsForm.get('u_phone')?.touched))"
+                            class="text-danger">*required</div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" placeholder="ID" formControlName="_id">
+                        <label for="floatingInput">ID</label>
+                        <div *ngIf="studentDetailsForm.get('u_id')?.invalid && ((studentDetailsForm.get('u_id')?.dirty) || (studentDetailsForm.get('u_id')?.touched))"
+                            class="text-danger">*required</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" placeholder="Department" formControlName="u_department">
+                        <label for="floatingInput">Department</label>
+                        <div *ngIf="studentDetailsForm.get('u_department')?.invalid && ((studentDetailsForm.get('u_department')?.dirty) || (studentDetailsForm.get('u_department')?.touched))"
+                            class="text-danger">*required</div>
+                    </div>
+
+                    <div class="form-floating">
+                        <input type="password" class="form-control" placeholder="Password" formControlName="u_password">
+                        <label for="floatingPassword">Password</label>
+                        <div *ngIf="studentDetailsForm.get('u_password')?.invalid && ((studentDetailsForm.get('u_password')?.dirty) || (studentDetailsForm.get('u_password')?.touched))"
+                            class="text-danger">*required</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="studentDetailsForm.invalid">Add
+                            Student</button>
+                    </div>
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
